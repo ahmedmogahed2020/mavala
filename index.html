@@ -1,0 +1,710 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mavala Double-Lash | سيروم لتكثيف وتطويل الرموش</title>
+  <meta name="description" content="سيروم Mavala Double-Lash لعناية يومية تساعد على مظهر رموش أطول وأكثر امتلاء بشكل طبيعي." />
+
+  <style>
+    :root{
+      /* Light premium theme (readable on white backgrounds) */
+      --bg0:#f6f7fb;
+      --bg1:#ffffff;
+
+      --card:#ffffff;
+      --card2:#fbfbff;
+
+      --text:#0f172a;
+      --muted:#475569;
+      --muted2:#64748b;
+
+      --stroke: rgba(15,23,42,.10);
+      --stroke2: rgba(15,23,42,.14);
+
+      --brand:#7c3aed;
+      --brand2:#8b5cf6;
+
+      --ok:#10b981;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --info:#2563eb;
+
+      --radius:18px;
+      --radius2:22px;
+
+      --shadow: 0 18px 60px rgba(2,6,23,.12);
+      --shadow2: 0 10px 26px rgba(2,6,23,.10);
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Tahoma, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 520px at 88% -12%, rgba(124,58,237,.16), transparent 60%),
+        radial-gradient(900px 520px at 12% 0%, rgba(16,185,129,.10), transparent 55%),
+        radial-gradient(700px 420px at 60% 110%, rgba(37,99,235,.10), transparent 55%),
+        linear-gradient(180deg, var(--bg0), var(--bg1) 55%, var(--bg0));
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{max-width:1120px;margin:0 auto;padding:18px}
+
+    /* Header (not sticky) */
+    .topbar{
+      position:static;
+      background: rgba(255,255,255,.86);
+      border-bottom:1px solid var(--stroke);
+      backdrop-filter: blur(10px);
+    }
+    .topbar .inner{
+      max-width:1120px;margin:0 auto;
+      padding:12px 18px;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+    }
+    .brand{
+      display:flex;align-items:center;gap:10px;
+      font-weight:900;
+    }
+    .logo{
+      width:36px;height:36px;border-radius:14px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 14px 28px rgba(124,58,237,.20);
+    }
+    .metaRow{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .pill{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.92);
+      color: var(--muted);
+      font-size:13px;
+      white-space:nowrap;
+    }
+    .pill i{
+      width:18px;height:18px;border-radius:7px;
+      display:inline-grid;place-items:center;
+      font-style:normal;
+      background: rgba(124,58,237,.12);
+      border:1px solid rgba(124,58,237,.18);
+      color:#3b1bb6;
+      font-size:12px;
+    }
+
+    /* Cards */
+    .card{
+      background: var(--card);
+      border:1px solid var(--stroke);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .pad{padding:18px}
+    .section{margin:18px 0}
+
+    .sectionTitle{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .sectionTitle h2{margin:0;font-size:20px}
+    .hint{color:var(--muted2);font-size:13px}
+
+    /* Price full width */
+    .priceFull{
+      margin-top:16px;
+      padding:16px;
+      border-radius:22px;
+      border:1px solid rgba(124,58,237,.22);
+      background:
+        radial-gradient(900px 260px at 100% 0%, rgba(124,58,237,.16), transparent 62%),
+        radial-gradient(700px 240px at 0% 100%, rgba(16,185,129,.12), transparent 55%),
+        linear-gradient(180deg, rgba(124,58,237,.06), rgba(255,255,255,.92));
+      box-shadow: 0 18px 60px rgba(2,6,23,.10);
+      position:relative;
+      overflow:hidden;
+    }
+    .priceFull::after{
+      content:"";
+      position:absolute; inset:-70px -130px auto auto;
+      width:320px;height:320px;border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.70), transparent 60%);
+      filter: blur(10px);
+      opacity:.60;
+      pointer-events:none;
+    }
+    .priceRow{
+      display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+      position:relative;z-index:1;
+    }
+    .priceTitle{
+      font-weight:1100;
+      font-size:16px;
+      color:#1f0c4a;
+      display:flex;gap:10px;align-items:center;flex-wrap:wrap;
+    }
+    .priceTag{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid rgba(245,158,11,.32);
+      background: rgba(245,158,11,.14);
+      color:#7c2d12;
+      font-size:13px;font-weight:1100;
+      white-space:nowrap;
+    }
+    .priceNums{
+      display:flex;align-items:flex-end;gap:10px;flex-wrap:wrap;
+      position:relative;z-index:1;
+    }
+    .newPrice{
+      font-size:36px;font-weight:1200;line-height:1;
+      color:#1f0c4a;
+      letter-spacing:.2px;
+    }
+    .oldPrice{
+      color:var(--muted2);
+      text-decoration: line-through;
+      font-weight:900;
+      margin-bottom:5px;
+    }
+    .saveLine{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:13px;line-height:1.7;
+      position:relative;z-index:1;
+    }
+    .saveLine b{color:#7c2d12}
+
+    /* Hero two columns: description LEFT, image RIGHT */
+    .hero2{
+      margin-top:16px;
+      display:grid;gap:18px;
+      grid-template-columns: 1fr 1fr;
+      align-items:start;
+    }
+    @media(max-width:960px){ .hero2{grid-template-columns:1fr} }
+
+    /* Gallery */
+    .gallery{padding:14px}
+    .mainImg{
+      width:100%;
+      aspect-ratio: 4/3;
+      border-radius:18px;
+      border:1px solid var(--stroke2);
+      object-fit:cover;
+      background:#eef2ff;
+      box-shadow: var(--shadow);
+      cursor: zoom-in;
+    }
+    .thumbs{
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap:10px;margin-top:12px;
+    }
+    .thumb{
+      border-radius:16px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.92);
+      padding:6px;
+      transition:.15s transform ease, .15s background ease, .15s border-color ease;
+      cursor:pointer;
+    }
+    .thumb:hover{transform: translateY(-1px); background: rgba(255,255,255,.98); border-color: rgba(15,23,42,.18)}
+    .thumb img{
+      width:100%;
+      aspect-ratio: 1/1;
+      border-radius:12px;
+      object-fit:cover;
+      display:block;
+      background:#eef2ff;
+    }
+
+    /* Info */
+    .heroHead{
+      padding:18px;
+      background:
+        radial-gradient(700px 250px at 100% 0%, rgba(124,58,237,.12), transparent 60%),
+        linear-gradient(180deg, rgba(124,58,237,.06), rgba(255,255,255,.94));
+      border-bottom:1px solid rgba(124,58,237,.14);
+    }
+    h1{margin:0 0 8px;font-size:28px;line-height:1.25}
+    .sub{margin:0;color:var(--muted);line-height:1.9;font-size:15px}
+    .badgeRow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .badge{
+      display:inline-flex;gap:8px;align-items:center;
+      padding:9px 12px;border-radius:999px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.92);
+      font-size:13px;
+      color: var(--muted);
+    }
+    .badge b{color:var(--text)}
+
+    /* Feature cards */
+    .cols{
+      display:grid;gap:14px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @media(max-width:960px){ .cols{grid-template-columns:1fr} }
+
+    .feat{
+      padding:16px;
+      border-radius:18px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.92);
+    }
+    .featTop{display:flex;gap:10px;align-items:center;margin-bottom:8px}
+    .ico{
+      width:38px;height:38px;border-radius:16px;
+      display:grid;place-items:center;
+      background: rgba(124,58,237,.12);
+      border:1px solid rgba(124,58,237,.20);
+      box-shadow: 0 12px 25px rgba(124,58,237,.10);
+      font-style:normal;
+      color:#3b1bb6;
+    }
+    .feat b{font-size:15px}
+    .feat p{margin:0;color:var(--muted);line-height:1.85;font-size:14px}
+
+    /* Original */
+    .original{
+      margin-top:12px;
+      padding:14px;
+      border-radius:18px;
+      border:1px solid rgba(37,99,235,.22);
+      background:
+        radial-gradient(520px 220px at 100% 0%, rgba(37,99,235,.14), transparent 62%),
+        rgba(255,255,255,.92);
+    }
+    .originalTop{display:flex;gap:12px;align-items:flex-start}
+    .seal{
+      width:44px;height:44px;border-radius:18px;
+      display:grid;place-items:center;
+      background: rgba(37,99,235,.12);
+      border:1px solid rgba(37,99,235,.22);
+      box-shadow: 0 12px 25px rgba(37,99,235,.10);
+      font-style:normal;
+      flex:0 0 auto;
+      color:#0b3b9e;
+    }
+    .original b{display:block;font-size:15px;margin-bottom:4px}
+    .original p{margin:0;color:var(--muted);line-height:1.85;font-size:14px}
+
+    /* Reviews */
+    .reviews{
+      display:grid;gap:12px;
+      grid-template-columns: repeat(2,1fr);
+    }
+    @media(max-width:960px){ .reviews{grid-template-columns:1fr} }
+    .review{
+      padding:16px;border-radius:18px;
+      border:1px solid var(--stroke);
+      background: rgba(255,255,255,.92);
+    }
+    .rTop{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:8px}
+    .who{font-weight:1100}
+    .time{color:var(--muted2);font-size:12px}
+    .stars{color:#f59e0b;letter-spacing:1px}
+    .review p{margin:8px 0 0;color:rgba(15,23,42,.92);line-height:1.85}
+
+    /* FAQ */
+    details{
+      background: rgba(255,255,255,.92);
+      border:1px solid var(--stroke);
+      border-radius:18px;
+      padding:12px 14px;
+    }
+    details+details{margin-top:10px}
+    summary{
+      cursor:pointer;
+      display:flex;align-items:center;justify-content:space-between;gap:12px;
+      font-weight:1100;
+      list-style:none;
+    }
+    summary::-webkit-details-marker{display:none}
+    .ans{color:var(--muted);line-height:1.9;font-size:14px;margin-top:10px}
+
+    .note{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.9;
+      text-align:center;
+      padding:14px 0 28px;
+      opacity:.95;
+    }
+
+    /* Mobile polish */
+    @media(max-width:520px){
+      .wrap{padding:14px}
+      .newPrice{font-size:30px}
+      h1{font-size:24px}
+      .sub{font-size:14px}
+      .mainImg{aspect-ratio: 1/1}
+      .thumbs{grid-template-columns: repeat(2, 1fr)}
+    }
+
+    /* LIGHTBOX */
+    .lightbox{
+      position:fixed; inset:0;
+      background: rgba(2,6,23,.72);
+      backdrop-filter: blur(6px);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      z-index:9999;
+      padding:16px;
+    }
+    .lightbox.show{display:flex}
+    .lbInner{
+      width:min(980px, 96vw);
+      max-height: 86vh;
+      background: rgba(255,255,255,.98);
+      border:1px solid rgba(2,6,23,.10);
+      border-radius:22px;
+      box-shadow: 0 24px 80px rgba(0,0,0,.35);
+      overflow:hidden;
+      position:relative;
+    }
+    .lbTop{
+      display:flex;align-items:center;justify-content:space-between;gap:10px;
+      padding:12px 14px;
+      border-bottom:1px solid rgba(15,23,42,.10);
+      background: rgba(255,255,255,.92);
+    }
+    .lbTitle{font-weight:1100;color:#0f172a;font-size:14px}
+    .lbClose{
+      border:1px solid rgba(15,23,42,.14);
+      background: rgba(255,255,255,.92);
+      color:#0f172a;
+      border-radius:12px;
+      padding:8px 10px;
+      cursor:pointer;
+      font-weight:1100;
+    }
+    .lbBody{
+      position:relative;
+      padding:10px;
+      background: rgba(255,255,255,.92);
+      display:grid;
+      place-items:center;
+    }
+    .lbImg{
+      width:100%;
+      height: calc(86vh - 58px - 20px);
+      max-height: 72vh;
+      object-fit: contain;
+      background: #fff;
+      border-radius:16px;
+      border:1px solid rgba(15,23,42,.10);
+    }
+    .lbNav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:44px;height:44px;border-radius:16px;
+      border:1px solid rgba(15,23,42,.14);
+      background: rgba(255,255,255,.92);
+      cursor:pointer;
+      display:grid;place-items:center;
+      font-weight:1100;
+      color:#0f172a;
+      box-shadow: 0 14px 30px rgba(0,0,0,.12);
+      user-select:none;
+    }
+    .lbPrev{left:12px}
+    .lbNext{right:12px}
+    @media(max-width:520px){
+      .lbNav{width:40px;height:40px;border-radius:14px}
+      .lbPrev{left:10px}
+      .lbNext{right:10px}
+      .lbImg{max-height: 68vh}
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="inner">
+      <div class="brand">
+        <div class="logo"></div>
+        <div>
+          <div style="font-size:14px">To You</div>
+          <div style="font-size:12px;color:var(--muted2)">عناية • جودة • تجربة شيك</div>
+        </div>
+      </div>
+      <div class="metaRow">
+        <span class="pill"><i>⭐</i> 4.8/5 • 16 تقييم</span>
+        <span class="pill"><i>🧴</i> 10ml</span>
+        <span class="pill"><i>🛡️</i> Original 100%</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- PRICE FULL WIDTH -->
+    <div class="priceFull card" aria-label="سعر المنتج">
+      <div class="priceRow">
+        <div class="priceTitle">🔥 عرض خاص لفترة محدودة</div>
+        <span class="priceTag">خصم 28%</span>
+        <div class="priceNums">
+          <div class="newPrice">609.99 جنيه</div>
+          <div class="oldPrice">850 جنيه</div>
+        </div>
+      </div>
+      <div class="saveLine">وفر <b>240.01</b> جنيه على السعر الأصلي.</div>
+    </div>
+
+    <!-- IMAGE + DESCRIPTION -->
+    <section class="hero2">
+
+      <!-- DESCRIPTION (LEFT) -->
+      <div class="card">
+        <div class="heroHead">
+          <h1>سيروم مافالا Double-Lash ✨<br>لتكثيف وتطويل الرموش</h1>
+          <p class="sub">
+            سيروم عناية يومية للرموش يساعد تدريجيًا على مظهر أكثر كثافة وطول بشكل طبيعي.
+            مناسب كجزء من روتينك اليومي… وبيكمل شكل المكياج من غير مبالغة.
+          </p>
+
+          <div class="badgeRow">
+            <span class="badge"><b>✅</b> مناسب للاستخدام اليومي</span>
+            <span class="badge"><b>💎</b> نتيجة طبيعية</span>
+            <span class="badge"><b>🧪</b> جودة موثوقة</span>
+            <span class="badge"><b>🎁</b> تغليف شيك</span>
+          </div>
+        </div>
+
+        <div class="pad">
+          <div class="original" aria-label="ضمان الأصالة">
+            <div class="originalTop">
+              <i class="seal">🛡️</i>
+              <div>
+                <b>ضمان الأصالة — Original 100%</b>
+                <p>
+                  المنتج <b>أصلي 100%</b> ومضمون. لو وصلك أي مشكلة في الأصالة أو التغليف
+                  تواصل معانا فورًا وهنحلها بسرعة.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- IMAGE (RIGHT) -->
+      <div class="card gallery">
+        <img id="mainImg" class="mainImg"
+          src="https://i.postimg.cc/528DJvHN/71p9Jb3f_Iz_L_AC_UF894_1000_QL80_FMwebp.webp"
+          alt="Mavala Double-Lash - صورة المنتج"
+          onclick="openLightboxBySrc(this.src)">
+
+        <div class="thumbs" aria-label="صور المنتج">
+          <div class="thumb" onclick="setMain(0)"><img src="https://i.postimg.cc/528DJvHN/71p9Jb3f_Iz_L_AC_UF894_1000_QL80_FMwebp.webp" alt="صورة 1"></div>
+          <div class="thumb" onclick="setMain(1)"><img src="https://i.postimg.cc/8zLxGWFk/61oxp_Cy_TKJL_AC_UF894_1000_QL80_FMwebp.webp" alt="صورة 2"></div>
+          <div class="thumb" onclick="setMain(2)"><img src="https://i.postimg.cc/Gmv6RYB2/61x_Escq_JHL_AC_UF894_1000_QL80_FMwebp.webp" alt="صورة 3"></div>
+          <div class="thumb" onclick="setMain(3)"><img src="https://i.postimg.cc/wjDnzJtj/71n_L_q_Hnq_ML_AC_UF894_1000_QL80_FMwebp.webp" alt="صورة 4"></div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- QUICK LOOK -->
+    <section class="section card pad">
+      <div class="sectionTitle">
+        <h2>نظرة سريعة</h2>
+        <span class="hint">مختصر مفيد قبل ما تطلبي</span>
+      </div>
+
+      <div class="cols">
+        <div class="feat">
+          <div class="featTop"><i class="ico">✨</i><b>مظهر أطول</b></div>
+          <p>يدعم شكل الرموش تدريجيًا مع الاستخدام المنتظم.</p>
+        </div>
+        <div class="feat">
+          <div class="featTop"><i class="ico">🧴</i><b>عناية يومية</b></div>
+          <p>سهل في التطبيق ضمن روتين قبل النوم.</p>
+        </div>
+        <div class="feat">
+          <div class="featTop"><i class="ico">💎</i><b>امتلاء أفضل</b></div>
+          <p>يساعد على تقليل الإحساس بالفراغات في الرموش.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY BUY FROM US -->
+    <section class="section card pad">
+      <div class="sectionTitle">
+        <h2>ليه تشتري من متجرنا؟</h2>
+        <span class="hint">خدمة محترمة وتجربة مريحة</span>
+      </div>
+
+      <div class="cols">
+        <div class="feat">
+          <div class="featTop"><i class="ico">🛡️</i><b>ضمان أصالة</b></div>
+          <p>كل المنتجات Original 100% بضمان واضح.</p>
+        </div>
+        <div class="feat">
+          <div class="featTop"><i class="ico">🚚</i><b>شحن سريع</b></div>
+          <p>تجهيز سريع وتغليف شيك يحافظ على المنتج.</p>
+        </div>
+        <div class="feat">
+          <div class="featTop"><i class="ico">🤝</i><b>دعم محترم</b></div>
+          <p>لو عندك أي استفسار قبل/بعد الطلب… إحنا معاك.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (16) -->
+    <section class="section card pad" id="reviews">
+      <div class="sectionTitle">
+        <h2>تقييمات العملاء ⭐</h2>
+        <span class="hint">4.8/5 • 16 تقييم ظاهرين</span>
+      </div>
+
+      <div class="reviews">
+        <div class="review"><div class="rTop"><span class="who">سارة</span><span class="time">من أسبوعين</span></div><div class="stars">★★★★★</div><p>فرق معايا في شكل الرموش وخصوصًا الأطراف، والتطبيق سهل جدًا.</p></div>
+        <div class="review"><div class="rTop"><span class="who">نهى</span><span class="time">من 10 أيام</span></div><div class="stars">★★★★★</div><p>حسيت إن الرموش بقت شكلها أحسن تدريجيًا مع الالتزام.</p></div>
+        <div class="review"><div class="rTop"><span class="who">مريم</span><span class="time">من 3 أسابيع</span></div><div class="stars">★★★★☆</div><p>حلو ومش تقيل… بس لازم صبر واستمرار علشان يبان فرق أكتر.</p></div>
+        <div class="review"><div class="rTop"><span class="who">دينا</span><span class="time">من شهر</span></div><div class="stars">★★★★★</div><p>الشكل العام بقى متناسق أكتر—وأنا مبسوطة بالنتيجة.</p></div>
+
+        <div class="review"><div class="rTop"><span class="who">آية</span><span class="time">من 8 أيام</span></div><div class="stars">★★★★★</div><p>التغليف شيك جدًا والمنتج أصلي—مبسوطة بالتجربة.</p></div>
+        <div class="review"><div class="rTop"><span class="who">ياسمين</span><span class="time">من 12 يوم</span></div><div class="stars">★★★★★</div><p>حسيت بفرق بسيط بعد شوية استمرار، ومناسب قبل النوم.</p></div>
+        <div class="review"><div class="rTop"><span class="who">رحاب</span><span class="time">من أسبوع</span></div><div class="stars">★★★★☆</div><p>كويس جدًا بس لازم استخدام يومي منتظم.</p></div>
+        <div class="review"><div class="rTop"><span class="who">هبة</span><span class="time">من 5 أيام</span></div><div class="stars">★★★★★</div><p>حلو وبيدي شكل طبيعي، والماسكارا بتبان أجمل بعده.</p></div>
+
+        <div class="review"><div class="rTop"><span class="who">ندى</span><span class="time">من 9 أيام</span></div><div class="stars">★★★★★</div><p>بصراحة أحسن من اللي جربته قبل كده—خصوصًا في الامتلاء.</p></div>
+        <div class="review"><div class="rTop"><span class="who">شيماء</span><span class="time">من 15 يوم</span></div><div class="stars">★★★★★</div><p>مريح على العين، ونتيجة تدريجية لطيفة.</p></div>
+        <div class="review"><div class="rTop"><span class="who">رنا</span><span class="time">من 3 أيام</span></div><div class="stars">★★★★★</div><p>سهل وسريع.. حطيته قبل النوم وخلاص.</p></div>
+        <div class="review"><div class="rTop"><span class="who">إيمان</span><span class="time">من أسبوعين</span></div><div class="stars">★★★★☆</div><p>محتاج وقت بس الجودة واضحة جدًا.</p></div>
+
+        <div class="review"><div class="rTop"><span class="who">هند</span><span class="time">من 6 أيام</span></div><div class="stars">★★★★★</div><p>المنتج أصلي والتسليم سريع—شكراً.</p></div>
+        <div class="review"><div class="rTop"><span class="who">بسمة</span><span class="time">من 11 يوم</span></div><div class="stars">★★★★★</div><p>فرق معايا في الأطراف وبيثبت الرموش شكلها أحلى.</p></div>
+        <div class="review"><div class="rTop"><span class="who">سلمى</span><span class="time">من 4 أيام</span></div><div class="stars">★★★★★</div><p>حبيت الشكل الطبيعي… مش بيعمل أي إزعاج.</p></div>
+        <div class="review"><div class="rTop"><span class="who">نور</span><span class="time">من 13 يوم</span></div><div class="stars">★★★★☆</div><p>ممتاز بس الالتزام مهم علشان النتيجة.</p></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section card pad" id="faq">
+      <div class="sectionTitle">
+        <h2>أسئلة شائعة</h2>
+        <span class="hint">إجابات مختصرة وواضحة</span>
+      </div>
+
+      <details open>
+        <summary>هل المنتج أصلي 100%؟ <span>▾</span></summary>
+        <div class="ans">أيوه ✅ المنتج Original 100% وضمان أصالة. لو واجهت أي مشكلة تواصل معانا فورًا.</div>
+      </details>
+
+      <details>
+        <summary>إمتى يبدأ يبان الفرق؟ <span>▾</span></summary>
+        <div class="ans">النتائج بتختلف، لكن غالبًا بتظهر تدريجيًا خلال عدة أسابيع مع الاستمرار.</div>
+      </details>
+
+      <details>
+        <summary>هل مناسب للاستخدام اليومي؟ <span>▾</span></summary>
+        <div class="ans">أيوه، هو معمول كعناية يومية. الأفضل الالتزام بروتين ثابت.</div>
+      </details>
+
+      <details>
+        <summary>هل ينفع مع الماسكارا؟ <span>▾</span></summary>
+        <div class="ans">ينفع، ويفضل تسيبيه يمتص/ينشف كويس قبل المكياج.</div>
+      </details>
+
+      <details>
+        <summary>هل مناسب للعين الحساسة؟ <span>▾</span></summary>
+        <div class="ans">لو عندك حساسية قوية أو تهيّج متكرر، الأفضل استشارة مختص قبل الاستخدام.</div>
+      </details>
+    </section>
+
+    <div class="note">
+      ⚠️ النتائج تختلف من شخص للتاني حسب طبيعة الرموش والالتزام.
+      لو في تهيّج/حساسية: أوقفي الاستخدام واستشيري مختص.
+    </div>
+
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox" onclick="lbBackdropClose(event)">
+    <div class="lbInner" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+      <div class="lbTop">
+        <div class="lbTitle" id="lbTitle">صورة المنتج</div>
+        <button class="lbClose" type="button" onclick="closeLightbox()">✕ إغلاق</button>
+      </div>
+      <div class="lbBody">
+        <div class="lbNav lbPrev" onclick="lbPrev(event)">‹</div>
+        <img id="lbImg" class="lbImg" src="" alt="صورة مكبرة">
+        <div class="lbNav lbNext" onclick="lbNext(event)">›</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const IMGS = [
+      "https://i.postimg.cc/528DJvHN/71p9Jb3f_Iz_L_AC_UF894_1000_QL80_FMwebp.webp",
+      "https://i.postimg.cc/8zLxGWFk/61oxp_Cy_TKJL_AC_UF894_1000_QL80_FMwebp.webp",
+      "https://i.postimg.cc/Gmv6RYB2/61x_Escq_JHL_AC_UF894_1000_QL80_FMwebp.webp",
+      "https://i.postimg.cc/wjDnzJtj/71n_L_q_Hnq_ML_AC_UF894_1000_QL80_FMwebp.webp",
+      "https://i.postimg.cc/FsMwwGKY/%D9%85%D8%A7%D9%84%D9%81%D8%A7_4.jpg"
+    ];
+
+    let currentIndex = 0;
+
+    function openLightboxBySrc(src){
+      const idx = IMGS.indexOf(src);
+      openLightbox(idx >= 0 ? idx : 0);
+    }
+
+    function setMain(i){
+      currentIndex = (i + IMGS.length) % IMGS.length;
+      const m = document.getElementById('mainImg');
+      if(m) m.src = IMGS[currentIndex];
+      openLightbox(currentIndex);
+    }
+
+    function openLightbox(i){
+      currentIndex = (i + IMGS.length) % IMGS.length;
+      const lb = document.getElementById('lightbox');
+      const img = document.getElementById('lbImg');
+      const title = document.getElementById('lbTitle');
+      if(!lb || !img) return;
+
+      img.src = IMGS[currentIndex];
+      if(title) title.textContent = "صورة المنتج (" + (currentIndex+1) + "/" + IMGS.length + ")";
+      lb.classList.add('show');
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox(){
+      const lb = document.getElementById('lightbox');
+      if(lb) lb.classList.remove('show');
+      document.body.style.overflow = "";
+    }
+
+    function lbPrev(e){
+      if(e) e.stopPropagation();
+      openLightbox(currentIndex - 1);
+    }
+    function lbNext(e){
+      if(e) e.stopPropagation();
+      openLightbox(currentIndex + 1);
+    }
+
+    function lbBackdropClose(e){
+      if(e && e.target && e.target.id === "lightbox") closeLightbox();
+    }
+
+    document.addEventListener('keydown', (e)=>{
+      const lb = document.getElementById('lightbox');
+      if(!lb || !lb.classList.contains('show')) return;
+
+      if(e.key === "Escape") closeLightbox();
+      if(e.key === "ArrowLeft") lbNext(e);
+      if(e.key === "ArrowRight") lbPrev(e);
+    });
+  </script>
+</body>
+</html>
